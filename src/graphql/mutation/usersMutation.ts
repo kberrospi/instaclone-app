@@ -22,3 +22,13 @@ export const LOGIN = gql`
     }
   }
 `
+
+export const RENEW_JWT = gql`
+  mutation revalidarToken( $input: LoginInput ){
+    revalidarToken( input: $input ){
+      uid
+      name
+      token
+    }
+  }
+`

@@ -4,7 +4,9 @@ import { RegisterScreen } from "../components/auth/RegisterScreen";
 import { InscaloneScreen } from "../components/Instaclone/InscaloneScreen";
 
 
+
 export const AppRouter = () => {
+
   return (
     <Router>
         <Routes>

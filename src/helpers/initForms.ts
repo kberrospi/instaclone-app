@@ -8,3 +8,11 @@ export const initFormRegister = {
 
 
 }
+
+
+export const initFormLogin = {
+
+  email: '',
+  password: ''
+
+}

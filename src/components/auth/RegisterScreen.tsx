@@ -10,7 +10,7 @@ import { LOGIN, USER_REGISTER } from "../../graphql/mutation/usersMutation";
 import instaclone from '../../assets/images/instaclone.png'
 import '../../scss/auth/auth.scss';
 import '../../scss/auth/authForm.scss';
-import { helperRegister } from "../../helpers/helperRegister";
+import { helperRegister } from "../../helpers/helperAuth";
 
 
 export const RegisterScreen = () => {
@@ -58,7 +58,7 @@ export const RegisterScreen = () => {
           <Form.Input 
             type='text' 
             name='userName' 
-            placeholder="Nombres de usuario"
+            placeholder="Nombre de usuario"
             onChange={ handleChange }
             value={ userName }
             error={ errors.userName && true }

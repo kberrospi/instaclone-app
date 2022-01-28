@@ -13,3 +13,8 @@ export const validFormRegister = {
     .required('Password2 es obligatorio')
     .oneOf([Yup.ref('password')], 'Las contraseñas deben ser iguales'),
 }
+
+export const validFormLogin ={
+  email: Yup.string().email('Email no valido').required('Escribe un email'),
+  password: Yup.string().required('Escribe una contraseña')
+}
