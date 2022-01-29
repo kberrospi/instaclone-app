@@ -13,6 +13,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { LOGIN } from "../../graphql/mutation/usersMutation";
 import '../../scss/auth/auth.scss'
 import '../../scss/auth/authForm.scss';
+import { ToastContainer } from "react-toastify";
 
 export const LoginScreen = () => {
 
@@ -26,7 +27,7 @@ export const LoginScreen = () => {
     onSubmit: async(formValue) => 
     helperLogin( formValue, login, context )
   }); 
-  const { handleSubmit, handleChange, errors } = formik;
+  const { handleSubmit, handleChange, errors, touched, handleBlur } = formik;
   const { email, password } = formik.values;
 
   return (
@@ -44,7 +45,8 @@ export const LoginScreen = () => {
             placeholder="Email"
             onChange={ handleChange }
             value={ email }
-            error={ errors.email && true }
+            onBlur={ handleBlur }
+            error={ errors.email && touched.email && { content: errors.email } }
           />
 
           <Form.Input 
@@ -53,7 +55,8 @@ export const LoginScreen = () => {
             placeholder="Contraseña"
             onChange={ handleChange }
             value={ password }
-            error={ errors.password }
+            onBlur={ handleBlur }
+            error={ errors.password && touched.password && { content: errors.password } }
           />
 
           <Button className="btn-submit" type='submit' > Iniciar Sesion </Button>
@@ -66,7 +69,14 @@ export const LoginScreen = () => {
           <Link to='/register'> <span> Registrate </span> </Link>
         </p>
       </div>
-
+      <ToastContainer 
+        position="bottom-center"
+        autoClose={ 5000 }
+        closeOnClick
+        draggable
+        pauseOnHover
+        pauseOnFocusLoss
+      />
     </Container>
   );
 };

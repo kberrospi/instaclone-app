@@ -1,4 +1,5 @@
 import { MutationFunction } from "@apollo/client";
+import { toast } from 'react-toastify';
 import { AuthContextProps } from "../context/AuthContext";
 import { types } from "../context/types";
 import { AuthUser, FormValuesLogin, FormValuesRegister } from "../interfaces/auth";
@@ -42,6 +43,10 @@ export const helperLogin = (
   const { email, password } = formValue;
   const input = { email, password };
 
+  const notify = (error: string) => {
+    toast.error(error, { theme:'dark' }) ;
+  }
+
   login({
     variables: {
       input
@@ -60,7 +65,9 @@ export const helperLogin = (
     dispatch( loginAction( user ) )
     
   })
-  .catch(( error ) => console.log( error ));
+  .catch(( error ) => {
+    notify(error.message)
+  });
 
 }
 
