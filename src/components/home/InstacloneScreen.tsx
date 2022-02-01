@@ -1,9 +1,11 @@
 import { useContext } from "react";
+import { Container } from "semantic-ui-react";
 import { AuthContext } from '../../context/AuthContext';
 import { types } from '../../context/types';
+import { Header } from "../ui/header/Header";
 
 
-export const InscaloneScreen = () => {
+export const InstacloneScreen = () => {
 
   const { dispatch } = useContext( AuthContext );
 
@@ -15,7 +17,14 @@ export const InscaloneScreen = () => {
 
   return (
 
-    <button onClick={ handleLogout } > Logout </button>
+    <>
+      <Header />
+      <Container>
+        <button onClick={ handleLogout } > Logout </button>
+      </Container>
+    
+    </>
+
 
   );
 };

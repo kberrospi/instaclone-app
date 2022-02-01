@@ -53,12 +53,12 @@ export const helperLogin = (
     }
   }).then(( res ) => {
 
-    const { token, uid, name } = res.data.login;
+    const { token, uid, userName } = res.data.login;
     localStorage.setItem('token', token);
 
     const user = {
       uid,
-      name,
+      userName,
       logged: true
     }
 

@@ -13,11 +13,11 @@ const init = () => {
   
   if( token ){
     const decoded: any = jwt_decode( token );
-    const { uid, name } = decoded;
+    const { uid, userName } = decoded;
     return {
       user:{
         uid,
-        name,
+        userName,
         logged: true
       }
     }

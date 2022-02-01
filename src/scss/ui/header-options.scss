@@ -1,0 +1,18 @@
+@import '../../index.scss';
+
+.header-options{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+
+  a{
+    padding: 5px;
+    font-size: 19px;
+  }
+
+  .ui.image.avatar{
+    width: 27px;
+    height: 27px;
+  }
+}

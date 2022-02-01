@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { LoginScreen } from "../components/auth/LoginScreen";
 import { RegisterScreen } from "../components/auth/RegisterScreen";
-import { InscaloneScreen } from "../components/Instaclone/InscaloneScreen";
+import { InstacloneScreen } from "../components/home/InstacloneScreen";
 import { PublicRoute } from './PublicRoute';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
@@ -18,7 +18,7 @@ export const AppRouter = () => {
     <Router>
         <Routes>
           <Route  path='/login' element={ 
-              <PublicRoute uid={user?.uid} >
+              <PublicRoute uid={user?.uid}>
                 <LoginScreen/> 
               </PublicRoute>
             } 
@@ -29,10 +29,10 @@ export const AppRouter = () => {
               </PublicRoute>
             } 
           />
-          <Route  path='/*' 
+          <Route path='/*' 
             element={ 
               <PrivateRoute uid={user?.uid}>
-                <InscaloneScreen />
+                <InstacloneScreen />
               </PrivateRoute> 
             }  
           />

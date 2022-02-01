@@ -19,7 +19,7 @@ export interface FormValuesRegister {
 export interface AuthUser{
 
   uid?: string,
-  name?: string,
+  userName?: string,
   logged: boolean
 
 }
