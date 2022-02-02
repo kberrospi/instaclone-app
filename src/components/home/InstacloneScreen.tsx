@@ -1,8 +1,6 @@
 import { useContext } from "react";
-import { Container } from "semantic-ui-react";
 import { AuthContext } from '../../context/AuthContext';
 import { types } from '../../context/types';
-import { Header } from "../ui/header/Header";
 
 
 export const InstacloneScreen = () => {
@@ -18,11 +16,7 @@ export const InstacloneScreen = () => {
   return (
 
     <>
-      <Header />
-      <Container>
-        <button onClick={ handleLogout } > Logout </button>
-      </Container>
-    
+      <button onClick={ handleLogout } > Logout </button>
     </>
 
 

@@ -6,6 +6,8 @@ import { PublicRoute } from './PublicRoute';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { PrivateRoute } from "./PrivateRoute";
+import { Profile } from "../components/profile/Profile";
+import { Container } from "semantic-ui-react";
 
 
 
@@ -29,6 +31,13 @@ export const AppRouter = () => {
               </PublicRoute>
             } 
           />
+          <Route path='/:userName' 
+            element={ 
+              <PrivateRoute uid={user?.uid}>
+                <Profile />
+              </PrivateRoute> 
+            }  
+          />
           <Route path='/*' 
             element={ 
               <PrivateRoute uid={user?.uid}>
@@ -37,7 +46,6 @@ export const AppRouter = () => {
             }  
           />
         </Routes>
-
     </Router>
   );
 };
